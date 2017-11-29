@@ -1,0 +1,7 @@
+<h2>My Homie</h2>
+<h3><%= @person.first_name + " " + @person.last_name %></h3>
+<%= link_to 'Edit', edit_person_path %>
+<%= link_to 'Delete', person_path(@person),
+      method: :delete,
+      data: { confirm: 'Really Delete?'} %>
+<%= link_to 'All People', people_path %>

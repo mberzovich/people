@@ -1,0 +1,28 @@
+<h1>My Bitchin' Bitches!</h1>
+<div class='homies'>
+  <%= image_tag 'homies.jpg' %>
+</div>
+
+<% if @persons.any? %>
+
+<div class="row">
+  <% @persons.each do |person| %>
+
+   <div class="col s4">
+    <div class="card-panel teal lighten-2">
+      <h5>
+      <%= link_to person.first_name + " " + person.last_name, person_path(person) %>
+    </h5>
+    </div>
+  </div>
+
+  <% end %>
+</div>
+<% else %>
+
+  <h4>No Homie Exitists , Please Create One!</h4>
+
+<% end %>
+
+<!-- <a href='/pages/new'>New Blog Post</a> -->
+<h5><%= link_to 'New Homie', new_person_path %></h5>
